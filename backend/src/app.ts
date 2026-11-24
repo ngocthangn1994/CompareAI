@@ -1,6 +1,7 @@
 import express from "express";
 import routerModel from "./routes/modelRoute";
 import compareModelRoute from "./routes/compareRoute";
+import scoreRoute from "./routes/scoreRoute";
 import cors from "cors";
 const app = express();
 
@@ -14,6 +15,6 @@ app.get("/", (req, res) => {
   });
 });
 
-app.use("/v1/api", routerModel, compareModelRoute);
+app.use("/v1/api", routerModel, compareModelRoute, scoreRoute);
 
 export default app;

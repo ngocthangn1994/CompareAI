@@ -5,17 +5,14 @@ import { useEffect, useState } from "react";
 import type { modelAI } from "../types/model";
 import type { ModelCompareResult } from "../types/comparison";
 import AnswerCard from "../components/compare/AnswerCard";
+import AnswerCardSkeleton from "../components/compare/AnswerCardSkeleton";
 const ComparePage = () => {
   const [models, setModels] = useState<modelAI[]>([]);
   const [prompt, setPrompt] = useState<string>("");
   const [result, setResult] = useState<ModelCompareResult>();
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
-  // compareModels: async (path: string, method: string, body?: string) => {
-  //   return await fetchData(path, method, body);
-  // },
-  //   selectedIds: string[];
-  //   toggleModel: (id: string) => void;
-  // };
+  const [isLoading, setLoading] = useState<boolean>(false);
+
   const toggleModel = (id: string) => {
     setSelectedIds((prev) =>
       prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id],
@@ -24,6 +21,7 @@ const ComparePage = () => {
 
   const handleClick = async () => {
     if (!prompt.trim() || selectedIds.length === 0) return;
+    setLoading(true);
     try {
       const comparePrompt = (await api.compareModels(
         "compare",
@@ -34,6 +32,8 @@ const ComparePage = () => {
     } catch (error) {
       throw new Error("Error when request compare prompt.");
       console.error(error);
+    } finally {
+      setLoading(false);
     }
   };
   useEffect(() => {
@@ -64,6 +64,8 @@ const ComparePage = () => {
             selectedIds={selectedIds}
             toggleModel={toggleModel}
           />
+          {isLoading && <AnswerCardSkeleton />}
+
           <div className="grid md:grid-cols-3 p-5 gap-5">
             {result &&
               result.data.map((model) => (

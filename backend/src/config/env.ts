@@ -10,6 +10,7 @@ const env = {
   PORT: process.env.PORT || "4000",
   FRONTEND_URL: process.env.FRONTEND_URL || "http://localhost:5173",
   OPEN_ROUTER_API_KEY: process.env.OPEN_ROUTER_API_KEY || "",
+  CLAUDE_API_KEY: process.env.CLAUDE_API_KEY || "",
 };
 
 export default env;
