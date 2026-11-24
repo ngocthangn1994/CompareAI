@@ -29,7 +29,7 @@ const Sidebar = () => {
   ];
   return (
     <>
-      <div className="bg-slate-900 min-h-screen p-5 text-white space-y-3">
+      <div className="bg-slate-900 md:min-h-screen p-5 text-white space-y-3">
         <Link to="/">
           <img className="w-60 object-cover" src={logo} />
         </Link>
@@ -42,7 +42,7 @@ const Sidebar = () => {
               to={item.path}
               end
               className={({ isActive }) =>
-                `flex items-center gap-2 rounded-lg px-4 py-3 text-xl transition-colors ${isActive ? "bg-violet-300 p-2 text-violet-900 font-semibold rounded-xl" : "hover:bg-violet-200 hover:text-violet-900"}`
+                `flex items-center gap-2 rounded-lg px-4 py-3 text-xl transition-colors ${isActive ? "bg-violet-300 p-2 text-violet-900 font-semibold rounded-xl" : "hover:bg-violet-200 hover:text-violet-900 hidden md:block"}`
               }
             >
               <div className="flex items-center gap-3 text-xl">

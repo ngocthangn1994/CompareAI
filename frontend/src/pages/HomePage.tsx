@@ -8,16 +8,18 @@ import CallToAction from "../components/home/CallToAction";
 const HomePage = () => {
   return (
     <>
-      <div className="px-2 space-y-2 md:px-10 md:space-y-10">
+      <div className="px-2 space-y-5 md:px-10 md:space-y-10">
         <Navbar />
         <div className="md:grid grid-cols-[0.5fr_0.5fr] p-2 md:px-10 md:py-10">
           <HeroSection />
           <ComparisonPreview />
         </div>
-        <SupportedModel />
-        <FeaturesSection />
-        <HowItWorksSection />
-        <CallToAction />
+        <div className="space-y-5">
+          <SupportedModel />
+          <FeaturesSection />
+          <HowItWorksSection />
+          <CallToAction />
+        </div>
       </div>
     </>
   );

@@ -52,7 +52,9 @@ const ComparePage = () => {
   return (
     <>
       <div className="grid md:grid-cols-[0.2fr_0.8fr]">
-        <Sidebar />
+        <div>
+          <Sidebar />
+        </div>
         <div>
           <PromptInput
             isCompare={handleClick}
