@@ -3,7 +3,7 @@ import { FaArrowCircleRight } from "react-icons/fa";
 const CallToAction = () => {
   return (
     <>
-      <div className="bg-violet-900 px-10 py-5 rounded-2xl flex justify-between items-center">
+      <div className="bg-violet-900 px-10 py-5 rounded-2xl md:flex justify-between items-center">
         <p className="text-4xl text-white font-bold">
           Find the answer that fits.
         </p>

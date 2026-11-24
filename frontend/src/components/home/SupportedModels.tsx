@@ -24,9 +24,9 @@ const SupportedModel = () => {
   ];
   return (
     <>
-      <div className="grid grid-cols-[0.4fr_0.6fr] text-2xl bg-violet-50 px-10 py-5 shadow-sm">
+      <div className="grid md:grid-cols-[0.4fr_0.6fr] text-2xl bg-violet-50 px-10 py-5 shadow-sm">
         <p className="font-semibold">Your favorite models. One workspace.</p>
-        <div className="grid grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
           {supporedModels.map((item) => (
             <div className="flex gap-2 items-center text-2xl">
               <p className="text-4xl"> {item.icon}</p>

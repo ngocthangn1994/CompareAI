@@ -1,10 +1,9 @@
 import logo from "../../assets/logo_brainbattleai.png";
-import Button from "../ui/Button";
 const Navbar = () => {
   const menu = [
     {
-      name: "Product",
-      path: "product",
+      name: "About Us",
+      path: "aboutus",
     },
     {
       name: "How It Works",
@@ -24,17 +23,14 @@ const Navbar = () => {
             src={logo}
             alt="Brainbattle AI logo"
           />
-          <div className="grid grid-cols-3 gap-5">
+          <div className="hidden md:grid grid-cols-3 gap-5 ">
             {menu.map((item) => (
               <div>
                 <p>{item.name}</p>
               </div>
             ))}
           </div>
-          <div className="flex gap-5">
-            <Button variant="secondary">Sign In</Button>
-            <Button>Start Comparing</Button>
-          </div>
+          <div className="flex gap-5"></div>
         </div>
       </nav>
     </>

@@ -6,7 +6,7 @@ const HeroSection = () => {
     <>
       <div className="space-y-5">
         <Badge>One prompt. Multiple perspectives.</Badge>
-        <p className="text-7xl font-bold">
+        <p className="text-5xl md:text-7xl font-bold">
           Better answers <br></br>
           start with <br></br>
           <p className="text-violet-600">comparison.</p>
@@ -16,11 +16,10 @@ const HeroSection = () => {
           <br></br>
           Choose what works best for you.
         </p>
-        <div className="flex gap-3">
+        <div className="flex gap-3 mb-3">
           <Link to="/compare">
             <Button>Start comparing</Button>
           </Link>
-          <Button variant="secondary">Try a sample prompt</Button>
         </div>
       </div>
     </>

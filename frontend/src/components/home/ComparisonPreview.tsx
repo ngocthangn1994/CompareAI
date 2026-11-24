@@ -8,7 +8,7 @@ import { CiSaveDown2 } from "react-icons/ci";
 const ComparisonPreview = () => {
   return (
     <>
-      <div className="border border-violet-200 rounded-xl px-5 py-auto bg-violet-100 shadow-sm space-y-3">
+      <div className="border border-violet-200 rounded-xl px-3 py-3 bg-violet-100 shadow-sm space-y-3">
         <div className="flex justify-between items-center">
           <img className="w-35 h-auto object-contain" src={logo} />
           <div className="grid grid-cols-2 gap-2">
@@ -28,10 +28,10 @@ const ComparisonPreview = () => {
           />
           <Button>Compare</Button>
         </div>
-        <div className="grid grid-cols-3 gap-5">
+        <div className="grid md:grid-cols-3 gap-5 p-2">
           {dataComparison.map((item) => (
-            <div className="p-2 rounded-xl bg-white shadow-sm">
-              <div className="flex justify-between items-center gap-3">
+            <div className="p-2 rounded-xl bg-white shadow-sm p-2">
+              <div className="flex justify-between items-center gap-3 p-1">
                 <div className="flex items-center gap-3">
                   <p>{item.icon}</p>
                   <div>
@@ -43,7 +43,7 @@ const ComparisonPreview = () => {
                   {item.grade}
                 </p>
               </div>
-              <p className="text-sm mt-3">{item.content}</p>
+              <p className="text-sm mt-3 p-2">{item.content}</p>
             </div>
           ))}
         </div>

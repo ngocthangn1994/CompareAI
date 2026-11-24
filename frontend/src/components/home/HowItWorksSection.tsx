@@ -18,7 +18,7 @@ const HowItWorksSection = () => {
   ];
   return (
     <>
-      <div className="grid grid-cols-3 gap-3">
+      <div className="grid md:grid-cols-3 gap-3">
         {steps.map((step) => (
           <div className="flex items-center gap-3 justify-center">
             <p className="px-5 py-2 bg-violet-100 rounded-xl text-6xl font-bold text-violet-700">

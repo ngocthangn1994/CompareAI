@@ -51,7 +51,7 @@ const ComparePage = () => {
 
   return (
     <>
-      <div className="grid grid-cols-[0.2fr_0.8fr]">
+      <div className="grid md:grid-cols-[0.2fr_0.8fr]">
         <Sidebar />
         <div>
           <PromptInput
@@ -62,7 +62,7 @@ const ComparePage = () => {
             selectedIds={selectedIds}
             toggleModel={toggleModel}
           />
-          <div className="grid grid-cols-3 p-5 gap-5">
+          <div className="grid md:grid-cols-3 p-5 gap-5">
             {result &&
               result.data.map((model) => (
                 <div key={model.model}>

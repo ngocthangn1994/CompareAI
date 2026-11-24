@@ -24,21 +24,21 @@ const ModelPicker = ({
   return (
     <>
       <div>
-        <div className="grid grid-cols-[0.2fr_0.8fr] border border-slate-300 w-full p-5 rounded shadow-lg">
-          <div className="flex items-center gap-1 text-xl text-slate-600 hover:text-slate-900">
+        <div className="grid md:grid-cols-[0.2fr_0.8fr] border border-slate-300 w-full p-2 md:p-5 rounded shadow-lg">
+          <div className="hidden md:flex items-center gap-1 text-xl text-slate-600 hover:text-slate-900">
             <GrAttachment />
             <p className="font-semibold">Attach File</p>
           </div>
-          <div className="grid grid-cols-2 items-center gap-5">
+          <div className="grid md:grid-cols-[0.6fr_0.4fr] items-center gap-5">
             <div className="grid grid-cols-3 gap-3">
               {selectedModels.map((item) => (
                 <div
                   key={item.name}
-                  className="flex items-center gap-3 text-xl border border-slate-200 rounded-2xl p-2 justify-center hover:bg-violet-100 hover:text-violet-600"
+                  className="flex items-center gap-3 text-sm border border-slate-200 rounded-2xl px-2 py-1 justify-center hover:bg-violet-100 hover:text-violet-600"
                 >
                   <div className="flex items-center gap-2">
                     <p>{modelIcon[item.provider as keyof typeof modelIcon]}</p>
-                    <p className="font-semibold text-sm">
+                    <p className="font-semibold">
                       {item.provider.toUpperCase()}
                     </p>
                   </div>
@@ -49,32 +49,30 @@ const ModelPicker = ({
               ))}
             </div>
 
-            <div className="grid grid-cols-2 gap-1">
-              <div className="flex items-center gap-1 text-xl border border-slate-200 rounded-xl p-3 bg-slate-100 hover:bg-violet-100 hover:text-violet-600">
-                <GiRegeneration className="text-2xl" />
-                <button
-                  type="button"
-                  onClick={() => setOpen(!open)}
-                  className="font-semibold"
-                >
-                  Change models
-                </button>
-              </div>
+            <div className="grid md:grid-cols-2 gap-3">
+              <button
+                type="button"
+                onClick={() => setOpen(!open)}
+                className="flex items-center gap-1 border border-slate-200 rounded-xl p-2 justify-center bg-slate-100 hover:bg-violet-100 hover:text-violet-600"
+              >
+                <GiRegeneration className="text-xl" />
+                Change models
+              </button>
               <button
                 onClick={isCompare}
-                className="flex items-center gap-1 text-xl px-3 py-3 bg-violet-600 text-white rounded-xl hover:bg-violet-700"
+                className="flex items-center justify-center gap-1 p-2 bg-violet-600 text-white rounded-xl hover:bg-violet-700"
               >
                 <span>
                   <CiPlay1 />
                 </span>
-                <p className="text-xl font-semibold">Compare models</p>
+                <p>Compare models</p>
               </button>
             </div>
           </div>
         </div>
         <div className="p-5">
           {open && (
-            <div className="grid grid-cols-4 gap-3 text-slate-900">
+            <div className="grid md:grid-cols-4 gap-3 text-slate-900">
               {models.map((model) => (
                 <div
                   key={model.id}

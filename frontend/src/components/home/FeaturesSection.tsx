@@ -8,7 +8,7 @@ const FeaturesSection = () => {
         <p className="text-center text-2xl font-bold">
           Less tab switching. More clarity.
         </p>
-        <div className="grid grid-cols-3 gap-20 items-center mt-5">
+        <div className="grid md:grid-cols-3 gap-5 md:gap-20 items-center mt-5">
           {features.map((feature) => (
             <div>
               <FeatureCard
