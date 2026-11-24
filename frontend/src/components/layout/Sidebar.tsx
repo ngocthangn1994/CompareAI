@@ -14,17 +14,17 @@ const Sidebar = () => {
     {
       icon: <CiTimer />,
       name: "History",
-      path: "/history",
+      path: "/",
     },
     {
       icon: <TbTagMinus />,
       name: "Saved prompts",
-      path: "/savedprompt",
+      path: "/",
     },
     {
       icon: <GiTrophyCup />,
       name: "Leaderboard",
-      path: "/leaderboard",
+      path: "/",
     },
   ];
   return (

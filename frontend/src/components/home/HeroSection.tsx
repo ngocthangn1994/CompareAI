@@ -18,7 +18,7 @@ const HeroSection = () => {
         </p>
         <div className="flex gap-3 mb-3">
           <Link to="/compare">
-            <Button>Start comparing</Button>
+            <Button className="text-xl">Start comparing</Button>
           </Link>
         </div>
       </div>
