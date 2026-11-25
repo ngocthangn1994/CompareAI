@@ -4,12 +4,21 @@ const scoreController = async (req: Request, res: Response) => {
   try {
     const { prompt, answer } = req.body;
 
-    const answers = answer.map((r: any) => r.choices[0].message.content);
-
     if (!prompt || !Array.isArray(answer) || answer.length == 0) {
       return res.status(400).json({
         success: false,
         message: "Prompt and answer are required.",
+      });
+    }
+
+    const answers = answer.map((r: any) => r.choices[0].message.content);
+    if (
+      answers.some((content) => typeof content !== "string" || !content.trim())
+    ) {
+      return res.status(400).json({
+        success: false,
+        message:
+          "Each answer must contain choices[0].message.content as non-empty text.",
       });
     }
     let data = await rateAnswer(prompt, answers);

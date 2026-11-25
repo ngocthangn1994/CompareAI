@@ -18,7 +18,7 @@ export async function rateAnswer(prompt: string, answer: string[]) {
         role: "user",
         content: `        
             Score each answer to the prompt from 1-10 on accuracy, completeness, clarity, conciseness.
-            Reply with ONLY JSON: {"scores":[{"label":"A","accuracy":0,"completeness":0,"clarity":0,"conciseness":0,"reason":"short"}],"winner":"A|B|tie","verdict":"one sentence"}
+            Reply with ONLY JSON: {"scores":[{"model":"","accuracy":0,"completeness":0,"clarity":0,"conciseness":0,"reason":"short"}],"winner":"A|B|tie","verdict":"one sentence"}
             Prompt:\n${prompt}\n\n${answersText}`,
       },
     ],

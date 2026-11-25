@@ -3,6 +3,7 @@ type AnswerCardProp = {
   model: string;
   answer: string;
 };
+
 import modelIcon from "../../data/modelIcon";
 const AnswerCard = ({ provider, model, answer }: AnswerCardProp) => {
   const icon = model.split("/")[0] as keyof typeof modelIcon;

@@ -1,5 +1,6 @@
 const BASE_URL = "http://localhost:4000/v1/api/";
 import type { getModels } from "../types/model";
+
 async function fetchData<T>(
   path: string,
   method: string,
@@ -26,6 +27,9 @@ const api = {
     return await fetchData(path, method);
   },
   compareModels: async (path: string, method: string, body?: string) => {
+    return await fetchData(path, method, body);
+  },
+  scoreModels: async (path: string, method: string, body?: string) => {
     return await fetchData(path, method, body);
   },
 };

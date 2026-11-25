@@ -1,15 +1,18 @@
 export interface scoreModel {
   model: string;
-  accuracy: Number;
-  completeness: Number;
-  clarity: Number;
-  conciseness: Number;
-  strengths: string;
-  weaknesses: string;
+  accuracy: number;
+  completeness: number;
+  clarity: number;
+  conciseness: number;
+  reason: string;
 }
 
 export interface scoreSummary {
-  scoreModels: scoreModel[];
-  winner: string;
-  verdict: string;
+  success: boolean;
+  message: string;
+  data: {
+    scores: scoreModel[];
+    winner: string;
+    verdict: string;
+  };
 }
